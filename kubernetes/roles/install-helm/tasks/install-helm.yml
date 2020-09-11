@@ -1,0 +1,12 @@
+- name: "Install Helm"
+  command:
+    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+  register: install_helm
+
+- name: "Permissions for Helm"
+  command:
+    chmod 700 get_helm.sh
+
+- name: "Execute ./get_helm.sh"
+  shell:
+    ./get_helm.sh
